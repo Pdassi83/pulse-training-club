@@ -8,6 +8,10 @@
   const skip = document.getElementById('intro-skip');
   const guide = document.getElementById('intro-motion-guide');
   const point = document.getElementById('intro-point');
+  const trailGroup = document.getElementById('intro-trail');
+  const trailSegments = [
+    ['intro-trail-soft', 160], ['intro-trail-mid', 100], ['intro-trail-bright', 50]
+  ].map(([id, span]) => ({ element: document.getElementById(id), span }));
   const root = document.documentElement;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const DURATION = 2750;
@@ -68,6 +72,13 @@
     }
   };
   const onReduced = event => { if (event.matches) { boot.markSeen(); finish(true); } };
+  const paint = (position, progress) => {
+    point.setAttribute('transform', `translate(${position.x} ${position.y})`);
+    /* Each dash ends at the focus and leaves only a short fading trail behind it. */
+    for (const segment of trailSegments) {
+      if (segment.element) segment.element.setAttribute('stroke-dashoffset', String(segment.span - progress * 1000));
+    }
+  };
   const draw = timestamp => {
     if (state !== 'running') return;
     if (startedAt === null) startedAt = timestamp;
@@ -75,7 +86,7 @@
     try {
       const position = guide.getPointAtLength(length * progress);
       if (!Number.isFinite(position.x) || !Number.isFinite(position.y)) throw new Error('Invalid point');
-      point.setAttribute('transform', `translate(${position.x} ${position.y})`);
+      paint(position, progress);
       if (progress >= 1) finish(false);
       else frame = window.requestAnimationFrame(draw);
     } catch { finish(true); }
@@ -88,10 +99,11 @@
       if (!Number.isFinite(length) || length <= 0) throw new Error('Invalid motion guide');
       const initialPoint = guide.getPointAtLength(0);
       if (!Number.isFinite(initialPoint.x) || !Number.isFinite(initialPoint.y)) throw new Error('Invalid point');
-      point.setAttribute('transform', `translate(${initialPoint.x} ${initialPoint.y})`);
+      paint(initialPoint, 0);
       state = 'running';
       boot.markSeen();
       point.removeAttribute('visibility');
+      if (trailGroup) trailGroup.removeAttribute('visibility');
       frame = window.requestAnimationFrame(draw);
     } catch { finish(true); }
   };
