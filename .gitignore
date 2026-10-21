@@ -1,0 +1,8 @@
+.netlify/
+node_modules/
+.env
+.env.*
+*.log
+*.zip
+__pycache__/
+.DS_Store

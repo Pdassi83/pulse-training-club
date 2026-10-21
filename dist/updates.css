@@ -1,0 +1,58 @@
+/* New content reuses the site's existing type, colors, spacing, and controls. */
+.hero{min-height:0}
+.hero-content{padding-bottom:28px}
+.hero-bottom{justify-content:flex-end}
+.hero-bottom>.hero-bottom-right{color:#adb5a5}
+.movement-card[data-goal-link="run"] img{object-position:center 44%;filter:none}
+.movement-card[data-goal-link="bike"] img{object-position:center 62%;filter:none}
+.movement-card[data-goal-link="run"]:hover img,.movement-card[data-goal-link="bike"]:hover img{filter:none}
+.movement-card[data-goal-link="walk"] img{object-position:58% 42%;filter:none}
+.movement-card[data-goal-link="walk"]:hover img{filter:none}
+.founders-section{background:var(--paper)}
+.founders-section .section-description{max-width:300px}
+.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.founder{margin:0;background:var(--ink);color:var(--paper);overflow:hidden}
+.founder-photo{aspect-ratio:4/4.8;overflow:hidden;background:#202320}
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center 32%}
+.founder:nth-child(2) img{object-position:center 30%}
+.founder figcaption{padding:25px 29px 29px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.founder h3{font-size:clamp(30px,3.6vw,49px);line-height:1}
+.founder figcaption span{font-size:9px;letter-spacing:.08em;color:var(--lime);text-transform:uppercase;padding-bottom:3px}
+.partners-section{background:var(--ink);color:var(--paper)}
+.partners-section .eyebrow{color:#b4beaa}
+.partners-section .section-description{color:#bdc6b3}
+.partners-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.partner{margin:0;border:1px solid #ffffff26;min-width:0}
+.partner-logo{height:200px;padding:26px;display:grid;place-items:center;background:#080a08}
+.partner-logo img{height:100%;width:100%;object-fit:contain;mix-blend-mode:screen}
+.partner figcaption{padding:17px 19px;border-top:1px solid #ffffff1a;font-size:11px;font-weight:600;line-height:1.7;min-height:72px}
+.partner figcaption small{display:block;color:#acb5a1;font-size:9px;font-weight:400}
+.partner-invitation{display:flex;align-items:center;justify-content:space-between;gap:35px;padding:34px 0 0;margin-top:36px;border-top:1px solid #ffffff2b}
+.partner-invitation h3{font-size:clamp(30px,3.5vw,46px)}
+.partner-invitation p{font-size:11px;color:#adb99f;margin-top:12px}
+.partner-invitation .button{font-size:11px;min-width:195px;flex:none}
+.products-section{background:var(--paper);padding-bottom:0}
+.products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 20px}
+.product-card{min-width:0;border-top:1px solid #b7bfac;display:flex;flex-direction:column}
+.product-visual{display:grid;place-items:center;width:100%;height:auto;aspect-ratio:4/3;margin-bottom:4px;overflow:hidden}
+.product-photo{display:block;width:100%;height:100%;overflow:hidden;fill:none;stroke:none}
+.product-visual:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.product-card .product-kicker{font-size:8px;letter-spacing:.12em;color:#68735c;display:block;margin-top:7px}
+.product-card h3{font-size:34px;margin-top:9px;margin-bottom:19px;overflow-wrap:break-word}
+.product-card .text-link{font-size:11px;gap:26px;min-height:44px;align-self:flex-start;margin-top:auto}
+.product-note{font-size:10px;color:#626d58;line-height:1.8;padding-top:25px}
+.message-community-link{display:block;text-align:center;font-size:10px;text-decoration:underline;text-underline-offset:4px;margin-top:12px}
+.message-community-link:hover{text-decoration-thickness:2px}
+.community-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:34px}
+.community-link{display:flex;flex-direction:column;align-items:stretch;gap:7px;padding:25px 24px;border:1px solid #adb99d;min-height:154px;transition:background .2s,border-color .2s}
+.community-link .platform{font-size:8px;letter-spacing:.12em;font-weight:600;color:#596c43}
+.community-link strong{font-family:Barlow,sans-serif;font-size:clamp(28px,3vw,39px);font-weight:800;line-height:1.1;letter-spacing:-.01em}
+.community-link .link-bottom{font-size:10px;color:#5a6650;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:auto}
+.community-link svg{width:18px;height:18px}
+.community-link:hover{background:var(--lime);border-color:var(--ink)}
+.footer-sections{display:flex;flex-wrap:wrap;gap:15px 30px;padding-top:25px;font-size:10px;color:#c2cdb7}
+.footer-sections a:hover{color:var(--lime)}
+@media(max-width:1100px){.partner-logo{height:170px;padding:20px}.partner figcaption{padding:15px;font-size:10px}.product-card h3{font-size:30px}.founder figcaption{padding:22px;display:block}.founder figcaption span{display:block;margin-top:12px}.community-link{padding:23px 19px}}
+@media(max-width:950px){.partners-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.partner-logo{height:200px;padding:29px}.partner figcaption{min-height:68px}.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 15px}.product-card .text-link{font-size:10px;gap:15px}.community-links{gap:10px}.community-link{padding:20px 15px}.community-link strong{font-size:29px}}
+@media(max-width:700px){.founders-grid{grid-template-columns:1fr;gap:23px}.founder-photo{aspect-ratio:4/4.6}.founder figcaption{padding:22px}.founder h3{font-size:41px}.founder figcaption span{font-size:9px;margin-top:10px}.partners-grid{gap:12px}.partner-logo{height:150px;padding:15px}.partner figcaption{font-size:10px;min-height:70px;padding:13px}.partner figcaption small{font-size:8px}.partner-invitation{display:block;padding-top:26px;margin-top:27px}.partner-invitation h3{font-size:35px}.partner-invitation p{font-size:10px;line-height:1.8}.partner-invitation .button{margin-top:23px;width:100%;min-height:52px}.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}.product-card h3{font-size:33px;margin-bottom:15px}.product-card .text-link{font-size:10px;gap:23px}.product-note{font-size:9px;max-width:330px}.community-links{grid-template-columns:1fr;gap:12px;margin-top:29px}.community-link{padding:21px 22px;min-height:147px;gap:11px}.community-link strong{font-size:36px}.community-link .platform{font-size:8px}.community-link .link-bottom{font-size:11px}.footer-sections{font-size:10px;gap:17px 23px;padding-top:24px}}
+@media(max-width:360px){.partner-logo{height:130px;padding:12px}.partner figcaption{font-size:9px;padding:11px}.product-card h3{font-size:30px}}

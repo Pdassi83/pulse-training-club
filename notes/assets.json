@@ -1,0 +1,57 @@
+[
+  {
+    "asset": "founder-fabio.png",
+    "supplied_name": "1000154047.png",
+    "sha256": "fc9224c4dac42908263768c74ce549839fa23b68d643ec871417dcf5c629403a"
+  },
+  {
+    "asset": "founder-rita.png",
+    "supplied_name": "1000154048.png",
+    "sha256": "3566a4d0aeb2cc8c6f4f55898f86e083bc650df432e5ec4c8ec5c4ca15fe1a3f"
+  },
+  {
+    "asset": "walk-pulse.jpg",
+    "supplied_name": "1000154054.jpg",
+    "sha256": "0efb590315ffaa0a046d1a549085ce6733a37d3c3511a55e13c32ba16a369144"
+  },
+  {
+    "asset": "partner-joao-cabral.png",
+    "supplied_name": "1000154071.png",
+    "sha256": "9ba74cb787ce63b08d9a9357c4245351618f16a50a3ef9dbafc9c79de89bc6d9"
+  },
+  {
+    "asset": "partner-triax-one.png",
+    "supplied_name": "1000154070.png",
+    "sha256": "0c6670998adca29ca203935477c1151c95c4f890814541004e0b11d59e978e9e"
+  },
+  {
+    "asset": "partner-seixal-bike.jpg",
+    "supplied_name": "1000154061.jpg",
+    "sha256": "d851bc3f6923d6a9a0fa9649686f4e98615cb64ebb4794a4735b66406c954608"
+  },
+  {
+    "asset": "partner-crossfit-almada.jpg",
+    "supplied_name": "1000154057.jpg",
+    "sha256": "801d35c1ff6ae9e0782f45efa0199a0d4f62de108a56776ca583bda66aa62717"
+  },
+  {
+    "asset": "pulse-symbol-original.jpg",
+    "supplied_name": "1000154052.jpg",
+    "sha256": "a1b510e44dafb9b10005b80ecc83d945b5c461936c12622cc72e56b9aa8b3d0a"
+  },
+  {
+    "asset": "run-community.png",
+    "supplied_name": "1000154196.png",
+    "sha256": "c7d162d1c00a6b101a09a0f0711d69b0eb7c90e5483fc2910bf4c5f63ba850e2"
+  },
+  {
+    "asset": "bike-community.png",
+    "supplied_name": "1000154195.png",
+    "sha256": "b717803816d97556acacbb092355e4fa7f0f1fe8aabb74d2e8cbf84c31ecad37"
+  },
+  {
+    "asset": "pulse-collection.jpg",
+    "supplied_name": "1000154198.png",
+    "sha256": "86448d92db46c461a1408c81a15779936fdd7b2bf7222fce551c5dd65ffdb273"
+  }
+]

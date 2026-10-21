@@ -1,0 +1,76 @@
+{
+  "source": "pulse-collection.jpg",
+  "size": [
+    1229,
+    1536
+  ],
+  "method": "SVG viewBox windows on the unmodified original image. No redrawing or raster processing.",
+  "products": [
+    {
+      "key": "sweat",
+      "title": "HOODIE",
+      "description": "Hoodie PULSE, frente e costas",
+      "box": [
+        12,
+        158,
+        619,
+        418
+      ]
+    },
+    {
+      "key": "tshirt",
+      "title": "T-SHIRT",
+      "description": "T-shirt PULSE, frente e costas",
+      "box": [
+        630,
+        220,
+        588,
+        356
+      ]
+    },
+    {
+      "key": "tank",
+      "title": "CAMISOLA DE ALÇAS",
+      "description": "Camisola de alças PULSE, frente e costas",
+      "box": [
+        30,
+        637,
+        421,
+        331
+      ]
+    },
+    {
+      "key": "longsleeve",
+      "title": "TÉCNICA DE MANGA COMPRIDA",
+      "description": "Camisola técnica de manga comprida PULSE, frente e costas",
+      "box": [
+        456,
+        637,
+        484,
+        331
+      ]
+    },
+    {
+      "key": "cap",
+      "title": "BONÉ",
+      "description": "Boné PULSE, frente e parte de trás",
+      "box": [
+        947,
+        627,
+        263,
+        341
+      ]
+    },
+    {
+      "key": "triathlon",
+      "title": "TOP DE TRIATLO",
+      "description": "Top de triatlo PULSE, frente e costas",
+      "box": [
+        25,
+        1027,
+        446,
+        360
+      ]
+    }
+  ]
+}

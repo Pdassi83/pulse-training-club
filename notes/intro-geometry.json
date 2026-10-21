@@ -1,0 +1,40 @@
+{
+  "source_size": [
+    1504,
+    1536
+  ],
+  "path": "M143,813 L368.55,812.98 L486.41,478.2 L707.75,1201.77 L945.3,311.08 L1043.04,813.81 L1272,813.73",
+  "points": [
+    [
+      143.0,
+      813.0
+    ],
+    [
+      368.55,
+      812.98
+    ],
+    [
+      486.41,
+      478.2
+    ],
+    [
+      707.75,
+      1201.77
+    ],
+    [
+      945.3,
+      311.08
+    ],
+    [
+      1043.04,
+      813.81
+    ],
+    [
+      1272.0,
+      813.73
+    ]
+  ],
+  "viewBox": "85 260 1250 990",
+  "white_line_coverage": 1.0,
+  "method": "Least-squares centerlines of six straight segments measured from the original JPEG, with exact segment intersections. Original artwork retained unchanged."
+}
