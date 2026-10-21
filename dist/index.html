@@ -11,20 +11,20 @@
   <link rel="preload" href="assets/inter-regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="updates.css?v=20261020">
-  <link rel="stylesheet" href="intro.css?v=20261021-2">
+  <link rel="stylesheet" href="intro.css?v=20261021-3">
   <link rel="preload" href="assets/pulse-symbol-original.jpg" as="image">
-  <script src="intro-bootstrap.js?v=20261021-2"></script>
-  <script src="intro.js?v=20261021-2" defer></script>
+  <script src="intro-bootstrap.js?v=20261021-3"></script>
+  <script src="intro.js?v=20261021-3" defer></script>
   <script src="script.js?v=20261020" defer></script>
 </head>
 <body>
   <div class="pulse-intro" id="pulse-intro" role="dialog" aria-modal="true" aria-labelledby="intro-label" aria-hidden="true" hidden>
     <h2 class="visually-hidden" id="intro-label">Bem-vindo à Pulse Training Club</h2>
     <svg class="pulse-intro__graphic" viewBox="85 260 1250 990" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-      <defs><filter id="intro-glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="10"/></filter></defs>
-      <image href="assets/pulse-symbol-original.jpg" x="0" y="0" width="1504" height="1536"/>
-      <path id="intro-motion-guide" d="M143,813 L368.55,812.98 L486.41,478.2 L707.75,1201.77 L945.3,311.08 L1043.04,813.81 L1272,813.73" fill="none" stroke="none"/>
-      <g id="intro-point" transform="translate(143 813)" visibility="hidden"><circle r="21" fill="#D5FA3B" opacity=".4" filter="url(#intro-glow)" stroke="none"/><circle r="12" fill="#D5FA3B" stroke="none"/></g>
+      <defs><filter id="intro-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="14"/></filter></defs>
+      <!-- Exact centerline measured from pulse-symbol-original.jpg; crisp edges, original geometry. -->
+      <path id="intro-motion-guide" d="M143,813 L368.55,812.98 L486.41,478.2 L707.75,1201.77 L945.3,311.08 L1043.04,813.81 L1272,813.73" fill="none" stroke="#ffffff" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="intro-point" transform="translate(143 813)" visibility="hidden"><circle r="56" fill="#D5FA3B" opacity=".35" filter="url(#intro-glow)" stroke="none"/><circle r="42" fill="#000000" stroke="none"/><circle r="32" fill="#D5FA3B" stroke="none"/></g>
     </svg>
     <button class="pulse-intro__skip" id="intro-skip" type="button">Avançar para o site <span aria-hidden="true">→</span></button>
   </div>

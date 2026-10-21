@@ -36,5 +36,7 @@
   ],
   "viewBox": "85 260 1250 990",
   "white_line_coverage": 1.0,
-  "method": "Least-squares centerlines of six straight segments measured from the original JPEG, with exact segment intersections. Original artwork retained unchanged."
+  "stroke_width": 50,
+  "stroke_measurement": "50 source pixels across both horizontal strokes at luminance 128; rounded caps and joins follow the source contour.",
+  "method": "Least-squares centerlines of six straight segments measured from the original JPEG, with exact segment intersections. The intro renders this same centerline as a crisp SVG stroke; the original JPEG is retained byte-for-byte."
 }

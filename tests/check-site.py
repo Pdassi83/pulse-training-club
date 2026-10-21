@@ -90,9 +90,9 @@ assert '<span>RUN · WALK · BIKE.</span>' not in html
 assert 'class="rhythm-strip"' in html
 assert 'Fotos Run e Bike ilustrativas' not in html
 assert 'Run e Bike: fotografias ilustrativas' not in html
-assert 'href="intro.css?v=20261021-2"' in html
-assert 'src="intro-bootstrap.js?v=20261021-2"' in html
-assert 'src="intro.js?v=20261021-2"' in html
+assert 'href="intro.css?v=20261021-3"' in html
+assert 'src="intro-bootstrap.js?v=20261021-3"' in html
+assert 'src="intro.js?v=20261021-3"' in html
 geometry = json.loads((ROOT / 'notes/intro-geometry.json').read_text())
 assert next(a['d'] for tag, a in doc.elements if a.get('id') == 'intro-motion-guide') == geometry['path']
 symbol = Image.open(DIST / 'assets/pulse-symbol-original.jpg').convert('L')

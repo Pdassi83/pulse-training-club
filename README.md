@@ -46,6 +46,7 @@ Para repetir a intro numa sessão que já a mostrou, abrir o endereço do site c
 
 Mantém os fundadores, parcerias, comunidades WhatsApp, Instagram e Strava, as fotografias fornecidas e os seis modelos da coleção.
 A intro tem cerca de 3 segundos, mostra uma vez por sessão, permite avançar e respeita movimento reduzido.
+O símbolo da intro usa o traçado SVG medido a partir do original, com a mesma geometria e espessura medida, para apresentar contornos nítidos. O ponto verde tem um contorno preto e brilho subtil para se distinguir do traço branco.
 Preços e disponibilidade não são anunciados. Os pedidos de informação preparam uma mensagem; o visitante escolhe enviá-la.
 
 Os ficheiros de licença das fontes encontram-se em `dist/assets/`.
