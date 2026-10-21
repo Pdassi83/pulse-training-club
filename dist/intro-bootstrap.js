@@ -1,18 +1,23 @@
-/* Fail open: an unavailable store or a failed script must never block the site. */
+/* Storage is optional; a failed script must never block the site. */
 (() => {
   const boot = { show: false, timer: null, failOpen: null, markSeen: null };
   window.__pulseIntroBoot = boot;
   try {
-    /* The repaired intro gets its own session flag; failed loads remain retryable. */
     const key = 'pulse.intro.seen.v2';
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const storage = window.sessionStorage;
-    const seen = storage.getItem(key) === '1';
-    storage.setItem(key, seen || reduce ? '1' : '0');
-    if (seen || reduce) return;
+    /* Explicit test links replay the intro while retaining reduced-motion support. */
+    const replay = /(?:^|[?&])intro=1(?:&|$)/.test(window.location.search);
+    let storage = null;
+    let seen = false;
+    try {
+      storage = window.sessionStorage;
+      seen = storage.getItem(key) === '1';
+    } catch { /* Privacy settings must not silently disable the intro. */ }
     boot.markSeen = () => {
-      try { storage.setItem(key, '1'); } catch { /* Keep the page available. */ }
+      try { if (storage) storage.setItem(key, '1'); } catch { /* Animation can run without storage. */ }
     };
+    if (reduce) { boot.markSeen(); return; }
+    if (seen && !replay) return;
     boot.show = true;
     document.documentElement.classList.add('pulse-intro-pending');
     boot.failOpen = () => {

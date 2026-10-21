@@ -77,6 +77,7 @@ function harness(options = {}) {
   const desktop = media(true);
   const win = new Events();
   win.scrollY = 0;
+  win.location = { search: options.search || '' };
   win.isSecureContext = options.secure !== false;
   win.matchMedia = query => query.includes('reduced-motion') ? reduced : desktop;
   win.setTimeout = (fn, delay) => { const id = ++sequence; timers.set(id, { fn, at: now + delay }); return id; };
@@ -86,7 +87,7 @@ function harness(options = {}) {
   Object.defineProperty(win, 'sessionStorage', { get() {
     if (options.storeGetterThrows) throw new Error('SecurityError');
     return {
-      getItem: key => store.get(key) || null,
+      getItem: key => { if (options.storeReadThrows) throw new Error('SecurityError'); return store.get(key) || null; },
       setItem: (key, value) => { if (options.storeWriteThrows) throw new Error('QuotaExceededError'); store.set(key, value); }
     };
   }});
@@ -197,6 +198,24 @@ test('Escape skips the intro and Tab stays in the dialog until it closes', () =>
 test('a second page load in the same session does not replay the intro', () => {
   const first = show(); const next = show({ store: first.store }); assertOpen(next); assert.equal(next.frames.size, 0);
 });
+test('an explicit test link replays a seen intro and still completes normally', () => {
+  const store = new Map([['pulse.intro.seen.v2', '1']]);
+  const h = show({ store, search: '?intro=1' });
+  assert.equal(h.el('pulse-intro').hidden, false);
+  h.frame(0); h.frame(1375);
+  assert.notEqual(h.el('intro-point').getAttribute('transform'), 'translate(143 813)');
+  h.frame(2750); h.tick(350); assertOpen(h);
+  assertOpen(show({ store }));
+});
+test('a test link does not override a reduced-motion preference', () => {
+  const h = show({ reduced: true, search: '?intro=1' });
+  assertOpen(h); assert.equal(h.frames.size, 0);
+});
+test('unrelated or partial query parameters do not replay a seen intro', () => {
+  for (const search of ['?intro=10', '?otherintro=1', '?ref=intro=1', '?intro=0']) {
+    assertOpen(show({ store: new Map([['pulse.intro.seen.v2', '1']]), search }));
+  }
+});
 test('reduced-motion users see the homepage immediately and are marked as seen', () => {
   const h = show({ reduced: true }); assertOpen(h); assert.equal(h.store.get('pulse.intro.seen.v2'), '1');
 });
@@ -224,8 +243,20 @@ test('legacy MediaQueryList listeners also support a reduced-motion change', () 
 test('reduced motion during the fade also clears its remaining timer', () => {
   const h = show(); h.frame(0); h.frame(2750); h.reduced.change(true); assertOpen(h); assert.equal(h.timers.size, 0);
 });
-test('a denied sessionStorage getter leaves the homepage available', () => assertOpen(show({ storeGetterThrows: true })));
-test('a denied sessionStorage write leaves the homepage available', () => assertOpen(show({ storeWriteThrows: true })));
+for (const option of ['storeGetterThrows', 'storeReadThrows', 'storeWriteThrows']) {
+  test(`${option}: the intro still moves, fades, and releases the homepage`, () => {
+    const h = show({ [option]: true });
+    assert.equal(h.el('pulse-intro').hidden, false);
+    h.frame(0); h.frame(1375);
+    assert.notEqual(h.el('intro-point').getAttribute('transform'), 'translate(143 813)');
+    h.frame(2750); assert.equal(h.el('pulse-intro').classList.contains('is-exiting'), true);
+    h.tick(350); assertOpen(h);
+  });
+}
+test('blocked storage plus a stalled image cannot leave a blank or locked page', () => {
+  const h = show({ storeGetterThrows: true, image: 'stalled' });
+  h.tick(4500); assertOpen(h);
+});
 test('a failed logo load leaves the homepage available', () => assertOpen(show({ image: 'error' })));
 test('a missing SVG measurement API leaves the homepage available', () => assertOpen(show({ brokenSvg: true })));
 test('invalid SVG coordinates cannot block the site', () => assertOpen(show({ brokenPoint: true })));

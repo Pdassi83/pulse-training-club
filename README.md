@@ -30,8 +30,10 @@ python3 tests/check-site.py
 
 Os testes automáticos cobrem a intro, o desvanecimento, o avanço imediato, a sessão, o movimento reduzido, o menu e as mensagens para as seis peças.
 
-Em 21/10/2026, passaram os 30 testes e a validação adicional. No Chrome desktop, foi verificada a abertura da intro, a revelação do site, o avanço imediato e a ausência de repetição ao recarregar, além da apresentação dos produtos. A duração e o desvanecimento foram validados nos testes automáticos.
+Em 21/10/2026, passaram os testes e a validação adicional. No Chrome desktop, foi verificada a abertura da intro, a revelação do site, o avanço imediato e a ausência de repetição ao recarregar, além da apresentação dos produtos. A duração e o desvanecimento foram validados nos testes automáticos.
 Não houve ensaio em dispositivos Android ou iPhone reais; o movimento reduzido foi validado apenas nos testes automáticos.
+
+Para repetir a intro numa sessão que já a mostrou, abrir o endereço do site com `?intro=1`. Esse modo de teste continua a respeitar movimento reduzido. As visitas normais mantêm uma apresentação por sessão quando o navegador permite guardar esse registo. Se o armazenamento estiver bloqueado, a animação funciona e pode repetir ao recarregar.
 
 ## Estrutura
 
